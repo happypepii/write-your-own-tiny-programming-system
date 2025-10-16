@@ -68,7 +68,7 @@ let rec evaluate (ctx:VariableContext) e =
     let vc = evaluate ctx cond
     match vc with
     | ValNum n ->
-      if n <> 0 then
+      if n = 1 then
         evaluate ctx tbranch
       else
         evaluate ctx fbranch

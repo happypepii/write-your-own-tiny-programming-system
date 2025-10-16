@@ -1,0 +1,11 @@
+virt-install \
+  --name jiangpe-web \
+  --ram 2048 \
+  --disk path=/home/jiangpe/qemu/jiangpe-web.qcow2,size=20,driver_type=qcow2 \
+  --vcpus 1 \
+  --boot uefi=off \
+  --os-variant centos-stream10 \
+  --network default,mac=52:54:00:a4:10:7c \
+  --network network=jiangpe-srvs,mac=52:54:00:a4:10:6b \
+  --graphics vnc,password=hello,listen=127.0.0.1,port=6439 \
+  --location /srv/nswi106/CentOS-Stream-10-20250929.0-x86_64-boot.iso
